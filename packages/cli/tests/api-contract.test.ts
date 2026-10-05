@@ -106,6 +106,21 @@ describe('API endpoint contracts', () => {
     expect(init.body).toBeUndefined();
   });
 
+  it('propagates an already-aborted signal to fetch', async () => {
+    const controller = new AbortController();
+    controller.abort(new Error('interrupted'));
+    let observedSignal: AbortSignal | undefined;
+    const fetchMock = vi.fn<typeof fetch>((_input, init) => {
+      observedSignal = init?.signal ?? undefined;
+      return Promise.reject(new Error('synthetic fetch rejection'));
+    });
+
+    await expect(apiWith(fetchMock).getCurrentUser(controller.signal)).rejects.toMatchObject({
+      code: 'REQUEST_ABORTED',
+    });
+    expect(observedSignal?.aborted).toBe(true);
+  });
+
   it('parses BYOK enabled models response shape', async () => {
     const fetchMock = vi.fn<typeof fetch>().mockResolvedValue(
       jsonResponse({
