@@ -52,7 +52,6 @@ single evaluation, `autoeval gate <evaluation-id>` applies flag-based thresholds
 - [CLI reference](https://github.com/AlchemyInCode/plumloom-autoeval-oss/blob/main/docs/public/cli-reference.md)
 - [Release gating for CI](https://github.com/AlchemyInCode/plumloom-autoeval-oss/blob/main/docs/public/release-gating.md)
 - [Local MCP server](https://github.com/AlchemyInCode/plumloom-autoeval-oss/blob/main/docs/public/mcp.md)
-- [ADRs](https://github.com/AlchemyInCode/plumloom-autoeval-oss/tree/main/docs/internal/adr)
 - [Security policy](https://github.com/AlchemyInCode/plumloom-autoeval-oss/blob/main/SECURITY.md)
 
 ## Extending the program
