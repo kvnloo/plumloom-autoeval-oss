@@ -19,7 +19,17 @@ const HINTS_BY_CODE: Readonly<Record<string, string>> = {
     'Results are still being prepared; retry `autoeval results <evaluation-id> <run-id>` shortly',
   REQUEST_ABORTED: 'The command was interrupted; rerun it when ready',
   INVALID_QUALITY_STANDARD_SCHEMA:
-    'Compare your file with the canonical schema in docs/command-reference.md',
+    'Compare your file with examples/quality-standards/qs-basic.json, then retry',
+  INVALID_CONFIGURED_RUN_SCHEMA:
+    'Fix the listed eval-file fields, then rerun `autoeval eval validate --input <file>`',
+  INVALID_MODEL_ID: 'Run `autoeval models` and replace the model ID with an enabled UUID',
+  MODEL_NOT_ENABLED: 'Run `autoeval models` and choose a model enabled for this account',
+  MODEL_ROLE_CONFLICT:
+    'Use distinct enabled model IDs for judge, primary, and comparison roles; check `autoeval models`',
+  DUPLICATE_COMPARISON_MODEL: 'Remove duplicate comparison model IDs, then validate again',
+  MODEL_OVERRIDE_REQUIRED:
+    'Run `autoeval models`; replace placeholder IDs in files used by `eval validate`, or pass supported model overrides to run commands',
+  DOCTOR_BLOCKED: 'Review the failed doctor checks above and follow their per-check hints',
   INVALID_QUALITY_STANDARD_JSON: 'Validate the file with a JSON linter, then retry',
   QUALITY_STANDARD_INPUT_READ_FAILED: 'Check the --input path relative to your current directory',
   CONFIGURED_RUN_INPUT_READ_FAILED: 'Check the --input path relative to your current directory',
