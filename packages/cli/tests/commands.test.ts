@@ -472,6 +472,16 @@ describe('deterministic command parsing', () => {
     expect(help).toContain('autoeval quickstart');
   });
 
+  it('keeps create-from help on commands and examples that actually exist', () => {
+    const program = createProgram({ execute: () => Promise.resolve() });
+    const evaluation = program.commands.find((command) => command.name() === 'eval');
+    const createFrom = evaluation?.commands.find((command) => command.name() === 'create-from');
+    const help = createFrom?.helpInformation() ?? '';
+
+    expect(help).toContain('examples/evals');
+    expect(help).not.toContain('eval scaffold');
+  });
+
   it('registers commands supplied by a composing distribution', async () => {
     const execute = vi.fn(() => Promise.resolve());
     const extra = vi.fn(() => undefined);
