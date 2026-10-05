@@ -96,6 +96,24 @@ describe('error hints', () => {
     );
   });
 
+  it('gives model and doctor failures a task-specific next step', () => {
+    expect(hintForError({ kind: 'validation', code: 'MODEL_NOT_ENABLED' })).toContain(
+      'autoeval models',
+    );
+    expect(hintForError({ kind: 'validation', code: 'MODEL_ROLE_CONFLICT' })).toContain(
+      'distinct enabled model IDs',
+    );
+    expect(hintForError({ kind: 'validation', code: 'MODEL_OVERRIDE_REQUIRED' })).toContain(
+      'eval validate',
+    );
+    expect(hintForError({ kind: 'validation', code: 'DOCTOR_BLOCKED' })).toContain(
+      'failed doctor checks',
+    );
+    expect(hintForError({ kind: 'usage', code: 'INVALID_QUALITY_STANDARD_SCHEMA' })).toContain(
+      'examples/quality-standards/qs-basic.json',
+    );
+  });
+
   it('returns undefined when no hint applies', () => {
     expect(hintForError({ kind: 'run_failed', code: 'UNKNOWN_CODE' })).toContain('autoeval status');
   });
