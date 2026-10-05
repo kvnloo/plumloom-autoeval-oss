@@ -6,7 +6,7 @@ Security fixes are applied to the latest revision of the default branch and to t
 
 ## Reporting a vulnerability
 
-Report privately through GitHub security advisories: https://github.com/plumloom-org/plumloom-autoeval/security/advisories/new
+Report privately through GitHub security advisories: https://github.com/AlchemyInCode/plumloom-autoeval-oss/security/advisories/new
 
 Do not open a public issue containing a vulnerability, credential, private response payload, account identifier, or reproduction using production data. Do not report Autoeval vulnerabilities through public discussion channels or the issue tracker.
 
