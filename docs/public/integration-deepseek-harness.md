@@ -165,8 +165,7 @@ evidence of the real format.
 
 ## Native Harness plugin
 
-A native plugin (`session/event` hook -> convert -> submit) is deliberately not shipped yet. See
-[ADR 0010](../internal/adr/0010-deepseek-harness-integration.md) for the reasoning: the conversion is the
-only real logic, it belongs in the CLI where it is testable without the Harness, and a
-version-pinned plugin against a pre-1.0 harness is maintenance to take on only once these two
+A native plugin (`session/event` hook -> convert -> submit) is deliberately not shipped yet. The
+conversion is the only real logic, it belongs in the CLI where it is testable without the Harness,
+and a version-pinned plugin against a pre-1.0 harness is maintenance to take on only once these two
 levels have real usage.
