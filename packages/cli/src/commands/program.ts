@@ -243,7 +243,10 @@ export function createProgram(
     .command('create-from')
     .description('create an evaluation in a workspace from a configured-run file')
     .requiredOption('--workspace <workspace-id>', 'workspace UUID')
-    .requiredOption('--input <json-file>', 'configured-run JSON file, such as one under examples/evals')
+    .requiredOption(
+      '--input <json-file>',
+      'configured-run JSON file, such as one under examples/evals',
+    )
     .option('--judge-model-id <uuid>', 'override the file judge model with an enabled model UUID')
     .option(
       '--primary-model-id <uuid>',
