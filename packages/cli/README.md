@@ -45,15 +45,14 @@ single evaluation, `autoeval gate <evaluation-id>` applies flag-based thresholds
 
 ## Documentation
 
-- [Quickstart](https://github.com/plumloom-org/plumloom-autoeval/blob/main/docs/public/quickstart.md) —
+- [Quickstart](https://github.com/AlchemyInCode/plumloom-autoeval-oss/blob/main/docs/public/quickstart.md) —
   authenticate and run a first evaluation without copying UUIDs
-- [Command guide](https://github.com/plumloom-org/plumloom-autoeval/blob/main/docs/public/commands.md) — every command,
+- [Command guide](https://github.com/AlchemyInCode/plumloom-autoeval-oss/blob/main/docs/public/commands.md) — every command,
   with file and suite examples
-- [CLI reference](https://github.com/plumloom-org/plumloom-autoeval/blob/main/docs/public/cli-reference.md)
-- [Release gating for CI](https://github.com/plumloom-org/plumloom-autoeval/blob/main/docs/public/release-gating.md)
-- [Local MCP server](https://github.com/plumloom-org/plumloom-autoeval/blob/main/docs/public/mcp.md)
-- [ADRs](https://github.com/plumloom-org/plumloom-autoeval/tree/main/docs/internal/adr)
-- [Security policy](https://github.com/plumloom-org/plumloom-autoeval/blob/main/SECURITY.md)
+- [CLI reference](https://github.com/AlchemyInCode/plumloom-autoeval-oss/blob/main/docs/public/cli-reference.md)
+- [Release gating for CI](https://github.com/AlchemyInCode/plumloom-autoeval-oss/blob/main/docs/public/release-gating.md)
+- [Local MCP server](https://github.com/AlchemyInCode/plumloom-autoeval-oss/blob/main/docs/public/mcp.md)
+- [Security policy](https://github.com/AlchemyInCode/plumloom-autoeval-oss/blob/main/SECURITY.md)
 
 ## Extending the program
 

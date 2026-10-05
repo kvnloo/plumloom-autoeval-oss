@@ -63,8 +63,7 @@ report is blocked. See [suite execution and release gating](#30-doctor-pre-fligh
 ### Authentication
 
 The action passes the key to the CLI step as `AUTOEVAL_API_KEY` and the required API origin as
-`AUTOEVAL_API_BASE_URL`. The key is never placed on the command line, echoed, or persisted (see
-[ADR 0002](../internal/adr/0002-cli-credential-storage.md)). CI needs no credential store; the key
+`AUTOEVAL_API_BASE_URL`. The key is never placed on the command line, echoed, or persisted. CI needs no credential store; the key
 environment variable takes precedence over it.
 
 ### Thresholds
@@ -513,7 +512,7 @@ jobs:
 ```
 
 The key is passed as an environment variable only — never on the command line, echoed, or
-persisted (see [ADR 0002](../internal/adr/0002-cli-credential-storage.md)). A non-zero exit fails the job;
+persisted. A non-zero exit fails the job;
 `FAIL`, `INCONCLUSIVE`, and `ERROR` remain distinguishable in the emitted JSON. The composite
 action in `.github/actions/autoeval-gate/` covers the single-evaluation `autoeval gate` flow and
 is documented in the [release gate guide](#single-evaluation-gate-autoeval-gate).
@@ -584,7 +583,7 @@ intended.
 #### npm publish flow
 
 `@plumloom/cli` is the published package. `publishConfig` marks it public, package metadata
-points at `https://github.com/plumloom-org/plumloom-autoeval`, and `prepublishOnly` runs the
+points at `https://github.com/AlchemyInCode/plumloom-autoeval-oss`, and `prepublishOnly` runs the
 public-boundary, build, test, and pack checks so a local publish cannot skip them.
 `scripts/check-package-contents.mjs` and `scripts/check-public-boundary.mjs` reject any
 closed-surface file that reaches the tarball.
