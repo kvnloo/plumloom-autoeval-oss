@@ -584,7 +584,7 @@ intended.
 #### npm publish flow
 
 `@plumloom/cli` is the published package. `publishConfig` marks it public, package metadata
-points at `https://github.com/plumloom-org/plumloom-autoeval`, and `prepublishOnly` runs the
+points at `https://github.com/AlchemyInCode/plumloom-autoeval-oss`, and `prepublishOnly` runs the
 public-boundary, build, test, and pack checks so a local publish cannot skip them.
 `scripts/check-package-contents.mjs` and `scripts/check-public-boundary.mjs` reject any
 closed-surface file that reaches the tarball.
