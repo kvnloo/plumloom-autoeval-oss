@@ -13,6 +13,7 @@ import {
   sharedAutoevalActions,
 } from '../src/mcp/tools.js';
 import { loadConfiguration } from '../src/config.js';
+import { CLI_VERSION } from '../src/version.js';
 import type { SupportedModel } from '../src/domain/types.js';
 import { createApi, FakeClock, IDS, versionResponse } from './helpers.js';
 
@@ -416,6 +417,17 @@ describe('Autoeval MCP tools', () => {
     expect(source).not.toMatch(/node:child_process|\bspawn\s*\(|\bexec(File)?\s*\(/u);
     expect(source).not.toMatch(/eval[-_ ]?engine/iu);
     expect(source).not.toMatch(/OpenAI|Anthropic|LiteLLM/iu);
+  });
+
+  it('keeps package, CLI, and MCP version reporting aligned', async () => {
+    const packageMetadata = JSON.parse(
+      await readFile(new URL('../package.json', import.meta.url), 'utf8'),
+    ) as { version: string };
+    const mcpSource = await readFile(new URL('../src/mcp/server.ts', import.meta.url), 'utf8');
+
+    expect(CLI_VERSION).toBe(packageMetadata.version);
+    expect(mcpSource).toContain('version: CLI_VERSION');
+    expect(mcpSource).not.toMatch(/version:\\s*['"][0-9]+\\.[0-9]+\\.[0-9]+['"]/u);
   });
 
   it('keeps tool descriptions free of endpoint and credential details', () => {
